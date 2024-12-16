@@ -1,16 +1,13 @@
-// This function expects a JS object as an argument
-// The object should contain the following properties
-// - initialInvestment: The initial investment amount
-// - annualInvestment: The amount invested every year
-// - expectedReturn: The expected (annual) rate of return
-// - duration: The investment duration (time frame)
+import { FormModel } from './models/form-model.ts'
+import { InvestmentRow } from './models/investment-row.ts'
+
 export function calculateInvestmentResults({
   initialInvestment,
   annualInvestment,
   expectedReturn,
   duration,
-}) {
-  const annualData = [];
+}: FormModel) {
+  const annualData: InvestmentRow[] = [];
   let investmentValue = initialInvestment;
 
   for (let i = 0; i < duration; i++) {
